@@ -16,9 +16,11 @@ class Deck
     #     compare to card.category
     #     if same, send to terminal
     #     else ignore
-    @cards.each |card| do
+    @cards.each do |card|
       if card.category == category
         card
+      else
+        nil
       end
     end
   end
