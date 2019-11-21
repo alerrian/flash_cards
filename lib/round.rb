@@ -13,15 +13,14 @@ class Round
   end
 
   def take_turn(current_guess)
-    @new_turn = Turn.new(current_guess, current_card)
+    new_turn = Turn.new(current_guess, current_card)
     @turns.push(@new_turn)
 
     if @new_turn.correct?
       @correct_answers += 1
-    else
-      @correct_answers
     end
 
-    @correct_answers
+    puts new_turn.feedback
+    new_turn
   end
 end
