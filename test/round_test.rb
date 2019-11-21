@@ -41,19 +41,10 @@ class RoundTest < Minitest::Test
     assert_equal @cards[0], round.current_card
   end
 
-  def test_take_turn_takes_argument
+  def test_take_turn
     deck = Deck.new(@cards)
     round = Round.new(deck)
 
     assert round.take_turn("Juneau")
-  end
-
-  def test_correct_answers
-    deck = Deck.new(@cards)
-    round = Round.new(deck)
-
-    new_turn = round.take_turn("Juneau")
-
-    assert_equal 1, new_turn
   end
 end

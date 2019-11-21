@@ -16,7 +16,7 @@ class Round
     new_turn = Turn.new(current_guess, current_card)
     @turns.push(@new_turn)
 
-    if @new_turn.correct?
+    if new_turn.correct?
       @correct_answers += 1
     end
 
