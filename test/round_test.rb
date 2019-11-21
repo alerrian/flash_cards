@@ -55,4 +55,13 @@ class RoundTest < Minitest::Test
 
     assert_equal 1, round.number_correct
   end
+
+  def test_correct_answers
+    deck = Deck.new(@cards)
+    round = Round.new(deck)
+
+    round.take_turn("Mars")
+
+    assert_equal 2, round.number_correct
+  end
 end

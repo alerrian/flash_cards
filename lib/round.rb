@@ -19,8 +19,8 @@ class Round
   def number_correct
     if @new_turn.correct?
       @correct_answers += 1
+    else
+      @correct_answers
     end
-
-    @correct_answers
   end
 end
