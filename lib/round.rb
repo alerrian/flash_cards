@@ -9,18 +9,18 @@ class Round
   end
 
   def current_card
-    @deck.cards.shift
+    @deck.cards[0]
   end
 
   def take_turn(current_guess)
     new_turn = Turn.new(current_guess, current_card)
-    @turns.push(@new_turn)
+    @turns.push(new_turn)
 
-    if new_turn.correct?
-      @correct_answers += 1
-    end
+    # if new_turn.correct?
+    #   @correct_answers += 1
+    # end
 
-    puts new_turn.feedback
+    # puts new_turn.feedback
     new_turn
   end
 end
