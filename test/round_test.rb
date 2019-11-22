@@ -70,4 +70,13 @@ class RoundTest < Minitest::Test
     assert_equal 1, round.number_correct
   end
 
+  def test_current_card_returns_next_card
+    deck = Deck.new(@cards)
+    round = Round.new(deck)
+
+    round.take_turn("Juneau")
+
+    assert_equal deck[1], round.current_card
+  end
+
 end
