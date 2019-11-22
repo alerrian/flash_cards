@@ -16,6 +16,8 @@ class Round
     new_turn = Turn.new(current_guess, current_card)
     @turns.push(new_turn)
 
+    require 'pry'; binding.pry
+
     if new_turn.correct?
       @number_correct += 1
     end
