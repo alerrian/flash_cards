@@ -7,6 +7,7 @@ class Round
     @turns = []
     @number_correct = 0
     @current_card_number = 0
+    @number_correct_by_category = Hash.new(0)
   end
 
   def current_card
@@ -24,5 +25,9 @@ class Round
     @current_card_number += 1
 
     new_turn
+  end
+
+  def number_correct_by_category(category)
+    @number_correct_by_category[category] += 1
   end
 end

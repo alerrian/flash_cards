@@ -109,7 +109,7 @@ class RoundTest < Minitest::Test
     assert_equal "Incorrect.", round.turns.last.feedback
   end
 
-  def test_take_turns_increments_number_correct
+  def test_take_turn_increments_number_correct
     deck = Deck.new(@cards)
     round = Round.new(deck)
 
@@ -117,5 +117,15 @@ class RoundTest < Minitest::Test
     round.take_turn("Venus")
 
     assert_equal 1, round.number_correct
+  end
+
+  def test_number_correct_by_category
+    deck = Deck.new(@cards)
+    round = Round.new(deck)
+
+    round.take_turn("Juneau")
+    round.take_turn("Venus")
+
+    assert_equal 1, round.number_correct_by_category(:Geography)
   end
 end
