@@ -99,5 +99,23 @@ class RoundTest < Minitest::Test
     assert_equal 2, round.turns.count
   end
 
-  
+  def test_feedback_is_incorrect
+    deck = Deck.new(@cards)
+    round = Round.new(deck)
+
+    round.take_turn("Juneau")
+    round.take_turn("Venus")
+
+    assert_equal "Incorrect.", round.turns.last.feedback
+  end
+
+  def test_take_turns_increments_number_correct
+    deck = Deck.new(@cards)
+    round = Round.new(deck)
+
+    round.take_turn("Juneau")
+    round.take_turn("Venus")
+
+    assert_equal 1, round.number_correct
+  end
 end
