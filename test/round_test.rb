@@ -124,7 +124,7 @@ class RoundTest < Minitest::Test
     round = Round.new(deck)
 
     round.take_turn("Juneau")
-    round.take_turn("Mars")
+    round.take_turn("Venus")
 
     assert_equal 1, round.number_correct_by_category(:Geography)
   end
