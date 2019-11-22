@@ -20,6 +20,7 @@ class Round
 
     if new_turn.correct?
       @number_correct += 1
+      @number_correct_by_category[current_card.category] += 1
     end
 
     @current_card_number += 1
@@ -28,6 +29,12 @@ class Round
   end
 
   def number_correct_by_category(category)
-    @number_correct_by_category[category] += 1
+    # If guess.correct? then add 1 to the hash value
+    # else just add the category as a key
+    @number_correct_by_category[category]
+  end
+
+  def percent_correct
+    return (@number_correct.to_f / (@current_card_number)) * 100
   end
 end
