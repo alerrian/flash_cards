@@ -124,8 +124,18 @@ class RoundTest < Minitest::Test
     round = Round.new(deck)
 
     round.take_turn("Juneau")
-    round.take_turn("Venus")
+    round.take_turn("Mars")
 
     assert_equal 1, round.number_correct_by_category(:Geography)
+  end
+
+  def test_number_correct_by_category_does_not_keep_incorrect
+    deck = Deck.new(@cards)
+    round = Round.new(deck)
+
+    round.take_turn("Juneau")
+    round.take_turn("Venus")
+
+    assert_equal 0, round.number_correct_by_category(:STEM)
   end
 end
