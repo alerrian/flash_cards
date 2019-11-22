@@ -78,4 +78,26 @@ class RoundTest < Minitest::Test
 
     assert_equal deck.cards[1], round.current_card
   end
+
+  def test_turns_gets_another_card
+    deck = Deck.new(@cards)
+    round = Round.new(deck)
+
+    round.take_turn("Juneau")
+    turn_result = round.take_turn("Venus")
+
+    assert_equal round.turns[1], turn_result
+  end
+
+  def test_turns_adds_new_card
+    deck = Deck.new(@cards)
+    round = Round.new(deck)
+
+    round.take_turn("Juneau")
+    round.take_turn("Venus")
+
+    assert_equal 2, round.turns.count
+  end
+
+  
 end

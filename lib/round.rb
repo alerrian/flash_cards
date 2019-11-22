@@ -6,10 +6,11 @@ class Round
     @deck = deck
     @turns = []
     @number_correct = 0
+    @current_card_number = 0
   end
 
   def current_card
-    @deck.cards[0]
+    @deck.cards[@current_card_number]
   end
 
   def take_turn(current_guess)
@@ -19,6 +20,8 @@ class Round
     if new_turn.correct?
       @number_correct += 1
     end
+
+    @current_card_number += 1
 
     new_turn
   end
