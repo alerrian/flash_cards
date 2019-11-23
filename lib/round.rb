@@ -50,6 +50,7 @@ class Round
     p "-------------------------------------------------"
 
     p "This is card number #{@current_card_number + 1} of #{deck.count}."
+    p "Question: " + deck.cards[@current_card_number].question
     
   end
 end
