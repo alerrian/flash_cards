@@ -45,11 +45,11 @@ class Round
   end
 
   def start
-    puts "-------------------------------------------------"
-    puts "Welcome! You're playing with #{deck.count} cards."
-    puts "-------------------------------------------------"
+    p "-------------------------------------------------"
+    p "Welcome! You're playing with #{deck.count} cards."
+    p "-------------------------------------------------"
 
-    puts "This is card number #{@current_card_number + 1} of #{deck.count}."
+    p "This is card number #{@current_card_number + 1} of #{deck.count}."
     
   end
 end
