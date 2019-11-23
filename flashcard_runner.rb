@@ -19,7 +19,4 @@ deck = Deck.new(cards)
 round = Round.new(deck)
 
 # Start program
-
-def start
-  
-end
+round.start
