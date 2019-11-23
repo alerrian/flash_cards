@@ -8,6 +8,7 @@ class Round
     @number_correct = 0
     @current_card_number = 0
     @number_correct_by_category = Hash.new(0)
+    @number_per_category = Hash.new(0)
   end
 
   def current_card
@@ -17,6 +18,8 @@ class Round
   def take_turn(current_guess)
     new_turn = Turn.new(current_guess, current_card)
     @turns.push(new_turn)
+
+    @number_per_category[current_card.category] += 1
 
     if new_turn.correct?
       @number_correct += 1
@@ -36,5 +39,9 @@ class Round
 
   def percent_correct
     return (@number_correct.to_f / (@current_card_number)) * 100
+  end
+
+  def percent_correct_by_category(category)
+    return (@number_correct_by_category[category] / @number_per_category[category]) * 100
   end
 end
