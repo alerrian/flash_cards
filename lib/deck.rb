@@ -16,11 +16,8 @@ class Deck
     #     compare to card.category
     #     if same, send to terminal
     #     else ignore
-    category_deck = []
-    @cards.each do |card|
-      if card.category == category
-        category_deck.push(card)
-      end
+    category_deck = @cards.map do |card|
+      category_deck.push(card) if card.category == category
     end
 
     category_deck
