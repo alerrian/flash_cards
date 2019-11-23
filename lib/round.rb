@@ -54,10 +54,10 @@ class Round
       p "Question: " + deck.cards[@current_card_number].question
 
       # Get user guess
-      user_guess = gets.chomp
+      user_guess = gets.downcase.chomp
 
       # Compare user guess to current card answer
-      take_turn(user_guess.downcase)
+      take_turn(user_guess)
     end
 
     puts "\n****** GAME OVER! ******"
