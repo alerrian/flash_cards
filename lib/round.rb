@@ -44,4 +44,10 @@ class Round
   def percent_correct_by_category(category)
     return (@number_correct_by_category[category] / @number_per_category[category]) * 100
   end
+
+  # def start
+  #   p "Welcome! You're playing with [anAmountOfCards] cards."
+  #   p "-----------------------------------------------------"
+  #   p "Questions: " 
+  # end
 end
