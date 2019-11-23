@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/card_generator'
 
-class RoundTest < Minitest::Test
+class CardGeneratorTest < Minitest::Test
   def test_it_exists
     cards = CardGenerator.new()
 
