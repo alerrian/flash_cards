@@ -169,4 +169,14 @@ class RoundTest < Minitest::Test
     assert_equal 0.0, round.percent_correct_by_category(:STEM)
   end
 
+  def test_current_card_is_last_card
+    deck = Deck.new(@cards)
+    round = Round.new(deck)
+
+    round.take_turn("Juneau")
+    round.take_turn("Venus")
+
+    assert_equal deck.cards[2], round.current_card
+  end
+
 end
