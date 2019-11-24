@@ -5,7 +5,8 @@ require './lib/round'
 require './lib/card_generator'
 
 # create new card deck
-generate_cards = CardGenerator.new('cards.txt')
+filename = 'cards.txt'
+generate_cards = CardGenerator.new(filename)
 
 # Add cards to deck
 deck = Deck.new(generate_cards.cards)

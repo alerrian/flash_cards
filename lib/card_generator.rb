@@ -1,17 +1,17 @@
 class CardGenerator
-  attr_reader :cards
+  attr_reader :cards, :generated_cards
 
   def initialize(filename)
-    @cards = gen_cards_from_file(filename)
+    @filename = filename
   end
 
-  def gen_cards_from_file(filename)
+  def cards
     # create an array to hold each card
     generated_cards = []
     # opens the file passed in by name and checks it line by line
-    File.open(filename).each do |line|
+    File.open(@filename).each do |each_line|
       # hold each piece of lines delimited by comma in array?
-      attributes = line.chomp.split(",")
+      attributes = each_line.chomp.split(",")
       # create a new card from the pieces of the line array
       card = Card.new(attributes[0], attributes[1], attributes[2])
       # send those cards out to the cards array
