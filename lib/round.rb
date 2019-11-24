@@ -49,7 +49,7 @@ class Round
     p "Welcome! You're playing with #{deck.count} cards."
     p "-------------------------------------------------"
 
-    until @current_card_number >= deck.count do 
+    until @current_card_number >= deck.count do
       p "This is card number #{@current_card_number + 1} of #{deck.count}."
       p "Question: " + deck.cards[@current_card_number].question
 
@@ -62,7 +62,7 @@ class Round
 
     puts "\n****** GAME OVER! ******"
     p "You had #{@number_correct} correct guesses out of #{deck.count} for a total score of #{percent_correct.round(0)}%."
-    
+
     @number_per_category.each_key do |category|
       p "#{category} - #{percent_correct_by_category(category).round(0)}% correct"
     end
