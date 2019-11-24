@@ -178,5 +178,4 @@ class RoundTest < Minitest::Test
 
     assert_equal deck.cards[2], round.current_card
   end
-
 end
