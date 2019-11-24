@@ -62,6 +62,7 @@ class Round
 
     puts "\n****** GAME OVER! ******"
     p "You had #{@number_correct} correct guesses out of #{deck.count} for a total score of #{percent_correct.round(0)}%."
+    
     @number_per_category.each_key do |category|
       p "#{category} - #{percent_correct_by_category(category).round(0)}% correct"
     end
