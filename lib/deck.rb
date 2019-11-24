@@ -10,12 +10,6 @@ class Deck
   end
 
   def cards_in_category(category)
-    # Access cards array
-    # find elements in array that have specific category
-    #   For each element in the array access .category parameter
-    #     compare to card.category
-    #     if same, send to terminal
-    #     else ignore
     category_deck = @cards.map do |card|
       category_deck.push(card) if card.category == category
     end
