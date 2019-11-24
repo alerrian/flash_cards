@@ -54,7 +54,7 @@ class Round
       p "Question: " + deck.cards[@current_card_number].question
 
       # Get user guess
-      user_guess = gets.downcase.chomp
+      user_guess = gets.chomp
 
       # Compare user guess to current card answer
       take_turn(user_guess)
@@ -62,8 +62,8 @@ class Round
 
     puts "\n****** GAME OVER! ******"
     p "You had #{@number_correct} correct guesses out of #{deck.count} for a total score of #{percent_correct.round(0)}%."
-    p "STEM - #{percent_correct_by_category(:STEM).round(0)}% correct"
-    p "Turing Staff - #{percent_correct_by_category(:Turing_Staff).round(0)}% correct"
-    p "Pop Culture - #{percent_correct_by_category(:Pop_Culture).round(0)}% correct"
+    @number_per_category.each_key do |key|
+      p "#{key} - #{percent_correct_by_category(key).round(0)}% correct"
+    end
   end
 end
