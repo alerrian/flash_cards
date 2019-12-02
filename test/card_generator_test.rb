@@ -15,4 +15,12 @@ class CardGeneratorTest < Minitest::Test
 
     assert_equal "cards.txt", generated_cards.filename
   end
+
+  def test_returns_cards_
+    generated_cards = CardGenerator.new("cards.txt")
+
+    generated_cards.cards.each do |card|
+      assert_instance_of Card, card
+    end
+  end
 end
